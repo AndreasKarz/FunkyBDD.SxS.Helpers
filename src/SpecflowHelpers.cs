@@ -11,6 +11,13 @@ namespace SwissLife.SxS.Helpers
     {
         private const string RegexPrefix = "regex:";
 
+        /// <summary>
+        ///     Compares a SpecFlow data table with a DotNet data table. 
+        ///     Supports Regex placeholder inside the SpecFlow data table.
+        /// </summary>
+        /// <param name="sTable">The SpecFlow data table from the Gherkin code</param>
+        /// <param name="tTable">The DotNet data table</param>
+        /// <returns>The result as list. If count = 0 then the tables are identical.</returns>
         public static List<string> CompareTables(Table sTable, DataTable tTable)
         {
             var result = new List<string>();
@@ -25,7 +32,7 @@ namespace SwissLife.SxS.Helpers
                         expectedValue = expectedValue.Replace("{nl}", "\r\n");
                         var value = tTable.Rows[i][j].ToString();
 
-                        if (!ValuesMatch(expectedValue, value))
+                        if (!valuesMatch(expectedValue, value))
                         {
                             result.Add($"Row {(i + 1):D3} / Col {(j + 1):D3} | {expectedValue} != {value}");
                         }
@@ -45,7 +52,7 @@ namespace SwissLife.SxS.Helpers
             return result;
         }
 
-        public static bool ValuesMatch(string expected, string value)
+        private static bool valuesMatch(string expected, string value)
         {
             if (expected.StartsWith(RegexPrefix))
             {

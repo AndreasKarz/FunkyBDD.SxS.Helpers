@@ -17,7 +17,8 @@
     <RepositoryType>GIT</RepositoryType>
     <PackageIconUrl>https://raw.githubusercontent.com/AndreasKarz/FunkyBDD.SxS.Helpers/master/icon.png</PackageIconUrl>
     <PackageTags>selenium iwebelement bdd pom apom testing extension automated sxs</PackageTags>
-    <PackageReleaseNotes>Init</PackageReleaseNotes>
+    <PackageReleaseNotes>Complete incode documentation</PackageReleaseNotes>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

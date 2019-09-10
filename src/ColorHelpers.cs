@@ -6,6 +6,12 @@ namespace SwissLife.SxS.Helpers
 {
     public static class ColorHelpers
     {
+        /// <summary>
+        ///     Parse a color object from a string. 
+        ///     Solves the problem that different browsers return different color values.
+        /// </summary>
+        /// <param name="cssColor">Color value in Hex, RGB or ARGB as string</param>
+        /// <returns></returns>
         public static Color ParseColor(string cssColor)
         {
             cssColor = cssColor.Trim();
