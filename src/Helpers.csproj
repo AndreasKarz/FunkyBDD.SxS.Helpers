@@ -1,37 +1,38 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>FunkyBDD.SxS.Helpers</AssemblyName>
     <RootNamespace>FunkyBDD.SxS.Helpers</RootNamespace>
     <OutputType>Library</OutputType>
     <IsPackable>true</IsPackable>
-    <Copyright>Swiss Life AG</Copyright>
+    <Copyright>Andreas Karz</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Andreas Karz</Authors>
-    <Company>Swiss Life AG</Company>
+    <Company></Company>
     <Description>Some helpers classes for the SxS Framework</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/AndreasKarz/FunkyBDD.SxS.Helpers</PackageProjectUrl>
     <RepositoryUrl>https://github.com/AndreasKarz/FunkyBDD.SxS.Helpers</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
     <PackageIconUrl>https://raw.githubusercontent.com/AndreasKarz/FunkyBDD.SxS.Helpers/master/icon.png</PackageIconUrl>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageTags>selenium iwebelement bdd pom apom testing extension automated sxs</PackageTags>
-    <PackageReleaseNotes>Complete incode documentation</PackageReleaseNotes>
-    <Version>1.0.1</Version>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>1701;1702;0618</NoWarn>
+    <PackageReleaseNotes>Unit tests implemented
+Build as DotNet Standard Class
+Read the README.MD</PackageReleaseNotes>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.24.0" />
-    <PackageReference Include="Selenium.Support" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="SpecFlow" Version="2.4.0" />
-    <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
+    <None Include="..\icon.png" Pack="true" PackagePath="\"/>
+    <Compile Remove="packages\**" />
+    <EmbeddedResource Remove="packages\**" />
+    <None Remove="packages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="4.6.1" />
   </ItemGroup>
 
 </Project>

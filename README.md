@@ -34,13 +34,23 @@ var fileName = FileHelpers.RemoveIllegalFileNameChars("*ç%&Zhj{//}test.png");
 
 ### CompareTables
 
-Compare a Specflow table with a C# DataTable. Support Regex definitions in the Specflow table, thats means, in the Gherkin code.
+Compare two C# DataTable. Support Regex definitions in the first table, thats means, in the Gherkin code.
 
 ```c#
 using SwissLife.SxS.Helpers;
+            
+var csvString = "head1,head2,head3\r\nval1,regex:val[0-9],val3";
+var isTable = SpecflowHelpers.Csv2Table(csvString);
+List<string> result = SpecflowHelpers.CompareTables(isTable, shouldTableFromSelenium);
 
-List<string> result = SpecflowHelpers.CompareTables(table, _page.Structure);
 ```
 
+### Csv2Table
 
+Convert a CSV string to a DataTable. The frist line must be the headers and the delemiter must be a comma.
+
+```
+var csvString = "head1,head2,head3\r\nval1,val2,val3";
+DataTable isTable = SpecflowHelpers.Csv2Table(csvString);
+```
 
